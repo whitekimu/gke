@@ -1,12 +1,4 @@
 steps:
-  - name: docker.io/library/python:3.7
-    id: Check code style
-    entrypoint: /bin/sh
-    args:
-      - -c
-      - >-
-        pip install --user black==22.3.0 &&
-        black --check server.py
   - name: "gcr.io/cloud-builders/docker"
     args: ["build", "-t", "gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA", "."]
     timeout: 500s

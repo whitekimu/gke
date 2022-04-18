@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-test
+  labels:
+    app: flask-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-test
+  template:
+    metadata:
+      labels:
+        app: flask-test
+    spec:
+      containers:
+        - name: flask-test
+          image: us-west1-docker.pkg.dev/glossy-champion-343401/test/flask-test:1.0
+          #imagePullPolicy: Never
+          #imagePullPolicy: IfNotPresent
+          #resources:
+          #  limits:
+          #    memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-test
+  namespace: default
+  labels:
+    app: flask-test
+spec:
+  selector:
+    app: flask-test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+      nodePort: 30001
+  type: NodePort
+  #type: LoadBalancer
+

@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
         - name: flask-test3
-          #image: gcr.io/glossy-champion-343401/gke:latest
-          image: gcr.io/glossy-champion-343401/gke@sha256:6ef5c3b5128c5bb42ab3495a1bfeded02ce7d61daa12b91c7508aae82efec8ef
+          image: gcr.io/glossy-champion-343401/gke:latest
 ---
 apiVersion: v1
 kind: Service

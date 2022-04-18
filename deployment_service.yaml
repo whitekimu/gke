@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-test3
+  name: flask-test2
   labels:
-    app: flask-test3
+    app: flask-test2
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: flask-test3
+      app: flask-test2
   template:
     metadata:
       labels:
-        app: flask-test3
+        app: flask-test2
     spec:
       containers:
-        - name: flask-test3
+        - name: flask-test2
           image: gcr.io/glossy-champion-343401/gke:latest
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-test3
+  name: flask-test2
   namespace: default
   labels:
-    app: flask-test3
+    app: flask-test2
 spec:
   selector:
-    app: flask-test3
+    app: flask-test2
   ports:
     - protocol: TCP
       port: 80

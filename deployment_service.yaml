@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: flask-test3
-          image: us-west1-docker.pkg.dev/glossy-champion-343401/test/flask-test:1.0
+          #image: us-west1-docker.pkg.dev/glossy-champion-343401/test/flask-test:1.0
+          image: gcr.io/glossy-champion-343401/gke:latest
           #imagePullPolicy: Never
           #imagePullPolicy: IfNotPresent
           #resources:

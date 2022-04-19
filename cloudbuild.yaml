@@ -11,5 +11,3 @@ steps:
   args: 
   - run
   - --filename=deployment_service.yaml
-  - --location=${_CLOUDSDK_COMPUTE_ZONE}
-  - --cluster=${_CLOUDSDK_CONTAINER_CLUSTER}

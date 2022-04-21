@@ -8,6 +8,6 @@ steps:
 # deploy container image to GKE
 - name: 'gcr.io/cloud-builders/gke-deploy'
   #args: ['run', 'deploy', 'demo-ui', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA', '--cluster', 'cluster-1', '--location', 'us-central1-c', '--namespace', 'default']
-  #args: ['run', 'deploy', '--filename', 'deployment_service.yaml', '--cluster', 'cluster-1', '--location', 'us-central1-c', '--namespace', 'default']
-  args: ['run', 'deploy', '--filename', 'deployment_service.yaml', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA', '--cluster', 'cluster-1', '--location', 'us-central1-c', '--namespace', 'default']
+  #args: ['run', 'deploy', '--filename', 'deployment_service.yaml', '--cluster', 'cluster-1', '--location', 'us-central1-c', '--namespace', 'default'] # depoyment_service.yaml에서 image에 latest 아닌 직접 태그 지정일때 사용
+  args: ['run', 'deploy', '--filename', 'deployment_service.yaml', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA', '--cluster', 'cluster-1', '--location', 'us-central1-c', '--namespace', 'default'] # 최신 이미지로 적용할때, depoyment_service.yaml에서 latest 실패시
   #args: ['run', 'deploy', '--filename', 'deployment_service.yaml', '--cluster', '${_CLOUDSDK_CONTAINER_CLUSTER}', '--location', '${_CLOUDSDK_COMPUTE_ZONE}', '--namespace', 'default'] # -> The connection to the server localhost:8080 was refused - did you specify the right host or port?, Error: failed to apply deployment: failed to apply Deployment configuration file with name "flask-test3" to cluster: failed to apply config from string: command to apply kubernetes config from string to cluster failed: exit status 1

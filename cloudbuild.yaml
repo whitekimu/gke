@@ -5,7 +5,7 @@ steps:
 # push container image
 - name: 'gcr.io/cloud-builders/docker'
   #args: ['push', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA']
-  args: ['push', 'us-west1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME']
+  args: ['push', 'us-west1-docker.pkg.dev/$PROJECT_ID/$REPO_NAME:1.0']
 # deploy container image to GKE
 - name: 'gcr.io/cloud-builders/gke-deploy'
   #args: ['run', 'deploy', 'demo-ui', '--image', 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA', '--cluster', 'cluster-1', '--location', 'us-central1-c', '--namespace', 'default']
